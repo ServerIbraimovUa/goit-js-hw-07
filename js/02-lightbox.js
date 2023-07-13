@@ -4,8 +4,6 @@ import { galleryItems } from "./gallery-items.js";
 console.log(galleryItems);
 const galleryList = document.querySelector(".gallery");
 
-galleryList.addEventListener("click", onClickGalleryItem);
-
 setGalleryHtml("beforeend", galleryElCreateMarkup(galleryItems));
 
 let lightbox = new SimpleLightbox(".gallery a", {
@@ -15,13 +13,6 @@ let lightbox = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
   download: "Download",
 });
-
-function onClickGalleryItem(e) {
-  e.preventDefault();
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-}
 
 function galleryElCreateMarkup(galleryItems) {
   return galleryItems
